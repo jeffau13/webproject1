@@ -169,7 +169,17 @@ body{
         width: 545px;
         height: 317px;
     }
-
+    #lowereastOut{
+        background-image: url("./images/lowereast_10.gif");
+        width: 366;
+        height: 317;
+    }
+    #lowereastIn{
+        background: rgba(255, 105, 180, 0.5);
+        width: 366;
+        height: 317;
+    }
+    
 /* Map Beacons
     beaconCent: The container which serves as the center point. Position is set with this
     beacon: options specific to each beacon are set with this i.e color.
