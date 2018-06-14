@@ -171,15 +171,34 @@ body{
     }
     #lowereastOut{
         background-image: url("./images/lowereast_10.gif");
-        width: 366;
-        height: 317;
+        width: 366px;
+        height: 317px;
     }
     #lowereastIn{
         background: rgba(255, 105, 180, 0.5);
-        width: 366;
-        height: 317;
+        width: 366px;
+        height: 317px;
     }
-    
+    #waterOut{
+        background-image: url("./images/water_11.gif");
+        width: 231px;
+        height: 427px;
+    }
+    #waterIn{
+        background: rgba(89, 89, 230, 0.5);
+        width: 231px;
+        height: 427px;
+    }
+    #financialOut{
+        background-image: url("./images/financial_12.gif");
+        width: 680px;
+        height: 427px;
+    }
+    #financialIn{
+        background: rgba(255, 217, 0, 0.5);
+        width: 680px;
+        height: 427px;
+    }
 /* Map Beacons
     beaconCent: The container which serves as the center point. Position is set with this
     beacon: options specific to each beacon are set with this i.e color.
@@ -189,7 +208,7 @@ body{
         top: 0px;
         left: 0px;
         */
-        transform: translate(100PX, 20px); 
+        transform: translate(100px, 20px); 
     }
     #parkbeacon{
         background: rgb(21, 255, 0);
