@@ -13,9 +13,13 @@ body{
     font-size: 16pt;    
 }
 .text{
-    text-align: center;
-    
+    text-align: center;  
 }
+/* Map Section Divs:
+   -sectionOut = The map image and dimensions of the section
+   -sectionIn  = The colored overlay. 
+                Hover options are controlled by the .hover class above.
+*/
 #morningsideOut{
     background-image: url("./images/morningside_01.gif");
     width:327px;
@@ -60,4 +64,16 @@ body{
     width: 218px;
     height: 952px;
 }
+#uppereastOut{
+    background-image: url("./images/uppereast_05.gif");
+    width: 366;
+    height: 952;
+}
+#uppereastIn{
+    background: yellow;
+    width: 366;
+    height: 952;
+}
+
+
 
