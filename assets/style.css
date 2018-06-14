@@ -2,37 +2,78 @@ body{
     margin: 0;
     padding: 0;
 }
+/* 
+    .hover Class: makes the default opacity of the top layer 
+                (colored overlay) completely opaque.
+*/
 .hover{
-    z-index: 10;
     opacity: 0;
 }
+
 .hover:hover{
     cursor: pointer;
-    opacity: .50;
+    opacity: 1;
     color: #ffffff;
-    font-size: 16pt;    
+    font-size: 16pt;   
 }
+.hover:hover .center{
+    opacity: 1;
+}
+.center{
+    position: absolute;
+}
+.beacon{
+    width: 25px;
+    height: 25px;
+    background: rgba(236, 236, 235, 1);
+    border-radius: 50%;
+    line-height: 100px;
+}
+.beacon:hover{
+    animation: pulsing 1s linear infinite;
+}
+@-webkit-keyframes pulsing{
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,109,74,.7);}
+    40% {
+        box-shadow: 0 0 0 50px rgba(255,109,74,0);}
+    80% {
+        box-shadow: 0 0 0 50px rgba(255,109,74,0);}
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,109,74,0);}
+}
+#parkBeaconCent{
+    /*
+    top: 0px;
+    left: 0px;
+    */
+    transform: translate(100PX, 20px); 
+}
+#parkbeacon{
+    background: rgb(21, 255, 0);
+}
+
 .text{
     text-align: center;  
 }
 /* Map Section Divs:
    -sectionOut = The map image and dimensions of the section
    -sectionIn  = The colored overlay. 
-                Hover options are controlled by the .hover class above.
+                -Hover options are controlled by the .hover class above.
+                -Since the child classes of .hover are the center and beacon classes, we have to use rgba to set the background opacity without
+                effecting the beacon opacity.
+                
 */
+
 #morningsideOut{
     background-image: url("./images/morningside_01.gif");
     width:327px;
     height:222px;
 }
 #morningsideIn{
-    background: red;
+    background: rgba(255, 0, 0, .5);
     width: 327px;
     height: 222px;
-}
-#morningsideIn:hover{
-    cursor: pointer;
-    opacity: .40;
 }
 #harlemOut{
     background-image: url("./images/harlem_02.gif");
@@ -40,7 +81,7 @@ body{
     height:222px;
 }
 #harlemIn{
-    background: green;
+    background: rgba(0, 128, 0, .5);
     width:584px;
     height:222px;
 }
@@ -50,7 +91,7 @@ body{
     height: 952px;
 }
 #upperwestIn{
-    background: orange;
+    background: rgba(255, 165, 0, .5);
     width: 327px;
     height: 952px;
 }
@@ -60,20 +101,58 @@ body{
     height: 952px;
 }
 #centralIn{
-    background: pink;
+    background: rgba(199, 88, 106, .50);
     width: 218px;
     height: 952px;
 }
 #uppereastOut{
     background-image: url("./images/uppereast_05.gif");
-    width: 366;
-    height: 952;
+    width: 366px;
+    height: 952px;
 }
 #uppereastIn{
-    background: yellow;
-    width: 366;
-    height: 952;
+    background: rgba(255, 255, 0, 0.5);
+    width: 366px;
+    height: 952px;
 }
-
-
+#hellsOut{
+    background-image: url("./images/hells_06.gif");
+    width: 327px;
+    height: 537px;
+}
+#hellsIn{
+    background: rgba(64, 224, 208, 0.5);
+    width: 327px;
+    height: 537px;
+}
+#midtownOut{
+    background-image: url("./images/midtowntimesq_07.gif");
+    width: 218px;
+    height: 537px;
+}
+#midtownIn{
+    background: rgba(255, 99, 71, 0.5);
+    width: 218px;
+    height: 537px;
+}
+#turtleOut{
+    background-image: url("./images/turtlebaymurrayhills_08.gif");
+    width: 366px;
+    height: 537px;
+}
+#turtleIn{
+    background: rgba(176, 224, 230, 0.5);
+    width: 366px;
+    height: 537px;
+}
+#sohoOut{
+    background-image: url("./images/chelseasoho_09.gif");
+    width: 545px;
+    height: 317px; 
+}
+#sohoIn{
+    background: rgba(214, 214, 29, 0.5);
+    width: 545px;
+    height: 317px;
+}
 
