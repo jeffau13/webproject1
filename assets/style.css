@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.hover{
+    z-index: 10;
+    opacity: 0;
+}
+.hover:hover{
+    cursor: pointer;
+    opacity: .50;
+    color: #ffffff;
+    font-size: 16pt;    
+}
+.text{
+    text-align: center;
+    
+}
+#morningsideOut{
+    background-image: url("./images/morningside_01.gif");
+    width:327px;
+    height:222px;
+}
+#morningsideIn{
+    background: red;
+    width: 327px;
+    height: 222px;
+}
+#morningsideIn:hover{
+    cursor: pointer;
+    opacity: .40;
+}
+#harlemOut{
+    background-image: url("./images/harlem_02.gif");
+    width:584px;
+    height:222px;
+}
+#harlemIn{
+    background: green;
+    width:584px;
+    height:222px;
+}
+#upperwestOut{
+    background-image: url("./images/upperwest_03.gif");
+    width: 327px;
+    height: 952px;
+}
+#upperwestIn{
+    background: orange;
+    width: 327px;
+    height: 952px;
+}
+#centralOut{
+    background-image: url("./images/central_04.gif");
+    width: 218px;
+    height: 952px;
+}
+#centralIn{
+    background: pink;
+    width: 218px;
+    height: 952px;
+}
+
