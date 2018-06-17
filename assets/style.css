@@ -67,13 +67,13 @@ body{
         /*box shadow: (x, y, blur, spead radius)*/
         /*rgba(red, green, blue, opacity)*/
         0% {                   
-            box-shadow: 0 0 0 0 rgba(255,109,74,.7);}
+            box-shadow: 0 0 0 0 rgba(177, 255, 74, 0.7);}
         40% {  
-            box-shadow: 0 0 0 50px rgba(255,109,74,0);}
+            box-shadow: 0 0 0 50px rgba(177, 255, 74,0);}
         80% {
-            box-shadow: 0 0 0 50px rgba(255,109,74,0);}
+            box-shadow: 0 0 0 50px rgba(177, 255, 74,0);}
         100% {
-            box-shadow: 0 0 0 0 rgba(255,109,74,0);}
+            box-shadow: 0 0 0 0 rgba(177, 255, 74,0);}
     }
 
 .text{
@@ -235,7 +235,10 @@ body{
         width: 100px;
         height: 100px;
         opacity: 0;
-        content: ''; 
+        font-size: 24pt;
+        font-weight: 900;
+        text-align: center;
+        content: 'Lasker Rink'; 
         transition: all .5s ease-in-out;       
     }
     /*------------------------------------
@@ -246,7 +249,7 @@ body{
         opacity: 1;
         width: 500px;
         height: 500px;
-        background-image: url(./placeholder.jpeg);
+        background-image: url(./lasker.jpeg);
         background-size: cover;
         transform: translate(-50%,-50%);
 
@@ -254,7 +257,7 @@ body{
 
 
     #westBeaconCent{
-        transform: translate(100px,500px);
+        transform: translate(250px,750px);
     }
     #westBeacon{
         background: rgb(21, 255, 0);
@@ -267,14 +270,17 @@ body{
         width: 100px;
         height: 100px;
         opacity: 0;
-        content: ''; 
+        font-size: 20pt;
+        font-weight: 900;
+        text-align: center;
+        content: 'Lincoln Center for the Performing Arts'; 
         transition: all .5s ease-in-out;       
     }
     #westBeacon:hover:before{
         opacity: 1;
         width: 500px;
         height: 500px;
-        background-image: url(./placeholder.jpeg);
+        background-image: url(./lincolncent.jpg);
         background-size: cover;
         transform: translate(10%,-10%);
 
