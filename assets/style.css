@@ -24,6 +24,9 @@ body{
     .hover:hover .center{
         opacity: 1;
     }
+    .hover:hover .beacon{
+        animation: pulsing 1s linear infinite;
+    }
 /*
     .Center class: serves as the center point of the beacon class. This will make the position of the beacon absolute, and not change with
                     page resizing.
@@ -45,9 +48,15 @@ body{
     Beacon hover: hovering your cursor over the beacon initiates the pulsing animation (specifics can be found
                     in the keyframes section)
 */
+
+
+/*     ---------------BEACON TEMPLATE DO NOT DELETE-------------------------------
     .beacon:hover{
         animation: pulsing 1s linear infinite;
     }
+*/
+
+
 /*
     Keyframes: The keyframe settings for the pulsating beacong
                 -between 0% and 100% frames are generated automatically over the length 
@@ -202,7 +211,12 @@ body{
 /* Map Beacons
     beaconCent: The container which serves as the center point. Position is set with this
     beacon: options specific to each beacon are set with this i.e color.
-*/
+
+    Template:
+            -Park Beacon Center
+                -Park Beacon
+                    -Park Beacon::before (for the hover animation)
+*/  
     #parkBeaconCent{
         /*
         top: 0px;
@@ -212,5 +226,57 @@ body{
     }
     #parkbeacon{
         background: rgb(21, 255, 0);
+    }
+    #parkbeacon::before{
+        background: gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+        content: ''; 
+        transition: all .5s ease-in-out;       
+    }
+    /*------------------------------------
+        PseudoElement ::before allows us to stage a "clone" of the
+                existing class to maneuver with :hover actions.
+    */
+    #parkbeacon:hover:before{
+        opacity: 1;
+        width: 500px;
+        height: 500px;
+        background-image: url(./placeholder.jpg);
+        background-size: cover;
+        transform: translate(-50%,-50%);
+
+    }
+
+
+    #westBeaconCent{
+        transform: translate(100px,500px);
+    }
+    #westBeacon{
+        background: rgb(21, 255, 0);
+    }
+    #westBeacon::before{
+        background: gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+        content: ''; 
+        transition: all .5s ease-in-out;       
+    }
+    #westBeacon:hover:before{
+        opacity: 1;
+        width: 500px;
+        height: 500px;
+        background-image: url(./placeholder.jpg);
+        background-size: cover;
+        transform: translate(10%,-10%);
+
     }
 
