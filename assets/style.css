@@ -246,7 +246,7 @@ body{
         opacity: 1;
         width: 500px;
         height: 500px;
-        background-image: url(./placeholder.jpg);
+        background-image: url(./placeholder.jpeg);
         background-size: cover;
         transform: translate(-50%,-50%);
 
@@ -274,7 +274,7 @@ body{
         opacity: 1;
         width: 500px;
         height: 500px;
-        background-image: url(./placeholder.jpg);
+        background-image: url(./placeholder.jpeg);
         background-size: cover;
         transform: translate(10%,-10%);
 
