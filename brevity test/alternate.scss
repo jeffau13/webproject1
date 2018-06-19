@@ -5,10 +5,13 @@ $sans-serif: 'Raleway', sans-serif;
 body{
     margin: 0;
     padding: 0;
-    background: gray;
+    background: url(./images/backgroundrepeat.jpg);
     display: flex;
     flex-direction: column;
     font-family: $sans-serif;
+}
+a{
+    text-decoration: none;
 }
 /*
     Keyframes: The keyframe settings for the pulsating beacong
@@ -27,6 +30,20 @@ body{
         box-shadow: 0 0 0 50px rgba(177, 255, 74,0);}
     100% {
         box-shadow: 0 0 0 0 rgba(177, 255, 74,0);}
+}
+@-webkit-keyframes move{
+    0% {margin-top: -70px;}
+    10%{margin-top: -100px;}
+    20%{margin-top: -70px;}
+    30%{margin-top: -100px;}
+    40%{margin-top: -70px;}
+    50%{margin-top: -100px;
+        transform: rotateY(360deg);}
+    60%{margin-top: -70px;}
+    70%{margin-top: -100px;}
+    80%{margin-top: -70px;}
+    90%{margin-top: -100px;}
+    100%{margin-top: -70px;}
 }
 @mixin sections($url, $width, $height) {
     background-image: url($url);
@@ -93,7 +110,7 @@ CLASS HEIRARCHY:
                 opacity: 0;
                 //background: black;
                 font-weight: bold;
-                content: 'hello';
+                content: '';
                 transition: visibility 1s, opacity 1s ease-in-out;
             }
         }
@@ -113,9 +130,11 @@ CLASS HEIRARCHY:
                 -----------------------------------------------------------------------*/
                 width: 25px;
                 height: 25px;
-                background: rgba(236, 236, 235, 1);
+                //background: rgba(96, 189, 21, 0.5);
+                background-image: url(locationpoint.png);
+                background-size: cover;
                 border-radius: 50%;
-                line-height: 100px;
+                //line-height: 100px;
             }
         }
         &:hover{
@@ -183,13 +202,13 @@ Map Section Divs:
         & #centralOut{
             @include sections("./images/central_04.gif", 218px, 952px);
             & #centralIn{
-                @include overlay(rgba(199, 88, 106, .50), 218px, 952px, "Cnt Park");
+                @include overlay(rgba(199, 88, 106, .50), 218px, 952px, "Central Park");
             }
         }
         & #uppereastOut{
             @include sections("./images/uppereast_05.gif", 366px, 952px);
             & #uppereastIn{
-                @include overlay(rgba(255, 255, 0, 0.5), 366px, 952px, "Upper East");
+                @include overlay(rgba(245, 119, 47, 0.5), 366px, 952px, "Upper East");
             }
         }
         & #hellsOut{
@@ -246,7 +265,7 @@ Map Section Divs:
 -----------------------------------------------------------------------------------------------------------------------------------
 */ 
     @mixin bsettings($Burl, $translatex, $translatey, $content) {
-        background: rgb(21, 255, 0);
+        //background: rgb(21, 255, 0);
         &::before{
                 /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
@@ -256,8 +275,8 @@ Map Section Divs:
             position: absolute;
             top: 0;
             left: 0;
-            width: 100px;
-            height: 100px;
+            width: 0px;
+            height: 0px;
             opacity: 0;
             font-size: 24pt;
             font-weight: 900;
@@ -271,9 +290,10 @@ Map Section Divs:
                 opacity: 1;
                 width: 300px;
                 height: 300px;
+                -webkit-text-stroke: 1px black;
                 background-image: url($Burl);
                 background-size: cover;
-                border: 4px solid greenyellow;
+                border: 4px solid salmon;
                 transform: translate($translatex * 1% , $translatey *1%);
             }
         }
@@ -287,10 +307,79 @@ Map Section Divs:
     #westBeaconCent{
         transform: translate(250px,730px);
         & #westBeacon{
-            @include bsettings("./images/lincolncent.jpg", -5 , -15, 'Lincoln Center for the Performing Arts');
+            @include bsettings("./images/lincolncent.jpg", -5 , -15, 'Lincoln Center');
+            /*
             &::before{
                 font-size: 12pt;
             }
+            */
         }
     }
+    #midBeaconCent{
+        transform: translate(150px, 400px);
+        & #midBeacon{
+            @include bsettings("./images/empirestate.jpeg", -50 , -50, 'Empire State Building');
+            &::before{
+                font-size: 20pt;
+                color: black;
+                background-position-x: -70px;
+            }
+        }
+    }
+    #morningsideBeaconCent{
+        transform: translate(150px, 10px);
+        & #morningsideBeacon{
+            @include bsettings("./images/ColumbiaUniversity.jpg", 5 , 10, 'Columbia University');
+        }
+    }
+    #harlemBeaconCent{
+        transform: translate(180px, 0px);
+        & #harlemBeacon{
+            @include bsettings("./images/harlem_yeunglingbrewery.jpg", 5 , 10, 'Yuengling Brewery');
+        }
+    }
+    #uppereastBeaconCent{
+        transform: translate(0px, 300px);
+        & #uppereastBeacon{
+            @include bsettings("./images/uppereastpop.jpg", -50 , -50, 'Guggenheim Museum');
+        }
+    }
+    #hellsBeaconCent{
+        transform: translate(100px, 300px);
+        & #hellsBeacon{
+            @include bsettings("./images/hellspop2.jpg", -50 , -50, 'Intrepid Museum');
+        }
+    }
+    #turtleBeaconCent{
+        transform: translate(100px, 300px);
+        & #turtleBeacon{
+            @include bsettings("./images/turtlebaypop2.jpg", -50 , -50, 'Chrysler Building');
+        }
+    }
+    #sohoBeaconCent{
+        transform: translate(100px, 0px);
+        & #sohoBeacon{
+            @include bsettings("./images/chelseapop.jpg", -50 , -50, 'Chelsea Market');
+        }
+    }
+    #lowereastBeaconCent{
+        transform: translate(300px, 100px);
+        & #lowereastBeacon{
+            @include bsettings("./images/lowereastpop2.jpg", -50 , -50, 'East Village');
+        }
+    }
+    #financialBeaconCent{
+        transform: translate(300px, 300px);
+        & #financialBeacon{
+            @include bsettings("./images/financialpop.jpg", -50 , -50, 'Wall Street');
+            &::before{
+                font-size: 20pt;
+                color: black;
+                background-position-x: -70px;
+            }
+        }
+    }
+
+
+
 
