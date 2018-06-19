@@ -22,53 +22,16 @@ a {
   /*box shadow: (x, y, blur, spead radius)*/
   /*rgba(red, green, blue, opacity)*/
   0% {
-    box-shadow: 0 0 0 0 rgba(177, 255, 74, 0.7);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
   40% {
-    box-shadow: 0 0 0 50px rgba(177, 255, 74, 0);
+    box-shadow: 0 0 0 50px transparent;
   }
   80% {
-    box-shadow: 0 0 0 50px rgba(177, 255, 74, 0);
+    box-shadow: 0 0 0 50px transparent;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(177, 255, 74, 0);
-  }
-}
-
-@-webkit-keyframes move {
-  0% {
-    margin-top: -70px;
-  }
-  10% {
-    margin-top: -100px;
-  }
-  20% {
-    margin-top: -70px;
-  }
-  30% {
-    margin-top: -100px;
-  }
-  40% {
-    margin-top: -70px;
-  }
-  50% {
-    margin-top: -100px;
-    transform: rotateY(360deg);
-  }
-  60% {
-    margin-top: -70px;
-  }
-  70% {
-    margin-top: -100px;
-  }
-  80% {
-    margin-top: -70px;
-  }
-  90% {
-    margin-top: -100px;
-  }
-  100% {
-    margin-top: -70px;
+    box-shadow: 0 0 0 0 rgba(13, 14, 12, 0);
   }
 }
 
@@ -158,6 +121,7 @@ CLASS HEIRARCHY:
   cursor: pointer;
   opacity: 1;
   color: #ffffff;
+  -webkit-text-stroke: 1px black;
   font-size: 16pt;
 }
 
@@ -406,7 +370,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -448,7 +412,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -482,7 +446,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -522,7 +486,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -556,7 +520,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -590,7 +554,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -624,7 +588,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -658,7 +622,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -692,7 +656,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -726,7 +690,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
@@ -760,7 +724,7 @@ Map Section Divs:
   /*----------------------------------------------------------
                 PseudoElement ::before allows us to use a "clone" of the
                         existing class to maneuver with :hover actions.
-            -----------------------------------------------------------*/
+                 -----------------------------------------------------------*/
   background: gray;
   position: absolute;
   top: 0;
