@@ -5,10 +5,13 @@ $sans-serif: 'Raleway', sans-serif;
 body{
     margin: 0;
     padding: 0;
-    background: gray;
+    background: url(./images/backgroundrepeat.jpg);
     display: flex;
     flex-direction: column;
     font-family: $sans-serif;
+}
+a{
+    text-decoration: none;
 }
 /*
     Keyframes: The keyframe settings for the pulsating beacong
@@ -326,7 +329,7 @@ Map Section Divs:
     #morningsideBeaconCent{
         transform: translate(150px, 10px);
         & #morningsideBeacon{
-            @include bsettings("./images/lasker.jpeg", 5 , 10, 'Columbia University');
+            @include bsettings("./images/ColumbiaUniversity.jpg", 5 , 10, 'Columbia University');
         }
     }
     #harlemBeaconCent{
