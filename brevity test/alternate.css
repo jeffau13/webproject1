@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
+body {
+  margin: 0;
+  padding: 0;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+}
+
+/*
+    Keyframes: The keyframe settings for the pulsating beacong
+                -between 0% and 100% frames are generated automatically over the length 
+                of the animation time  i.e (pulsing 1s linear infinite)
+*/
+@-webkit-keyframes pulsing {
+  /*percentage: The frame of the animation, i.e 0% is the first and 100% is the final.*/
+  /*box shadow: (x, y, blur, spead radius)*/
+  /*rgba(red, green, blue, opacity)*/
+  0% {
+    box-shadow: 0 0 0 0 rgba(177, 255, 74, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 50px rgba(177, 255, 74, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 50px rgba(177, 255, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(177, 255, 74, 0);
+  }
+}
+
+.navbar {
+  background: black;
+  flex: 1 1 20%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar .headOut, .navbar .headIn {
+  font-size: 3em;
+}
+
+.navbar .headIn {
+  font-size: 4em;
+  color: gray;
+}
+
+.navbar::before {
+  display: block;
+  background: white;
+  content: '.';
+  color: white;
+  margin-top: 1%;
+}
+
+.navbar::after {
+  display: block;
+  background: white;
+  content: '.';
+  color: white;
+}
+
+/*-------------------------------------------------------------------------------------
+CLASS HEIRARCHY:
+                .hover: Controls the rectangular overlay 
+                    .center: The center of the beacon
+                        .beacon: Controls the attributes/look of the animated beacon
+----------------------------------------------------------------------------------------*/
+.hover {
+  opacity: 0;
+}
+
+.hover .text {
+  text-align: center;
+  font-size: 24pt;
+}
+
+.hover .text::before {
+  visibility: hidden;
+  opacity: 0;
+  font-weight: bold;
+  content: 'hello';
+  transition: visibility 1s, opacity 1s ease-in-out;
+}
+
+.hover .center {
+  /*---------------------------------------------
+            .Center class: serves as the center point of the beacon class. 
+            This will make the position of the beacon absolute, and not change with
+            page resizing.
+            -----------------------------------------------*/
+  position: absolute;
+}
+
+.hover .center .beacon {
+  /*----------------------------------------------------------------------
+                Beacon Class: default setting for each beacon. These can be changed 
+                one-by-one using specific ids
+                -----------------------------------------------------------------------*/
+  width: 25px;
+  height: 25px;
+  background: #ececeb;
+  border-radius: 50%;
+  line-height: 100px;
+}
+
+.hover:hover {
+  /*------------------------------------------------
+               .hover: hover pseudoclass: makes the overlay appear on cursor hover.
+               ***must be set to 1 opacity, because of the beacon's requirement to be  completely solid.
+                   .beacon is a child of .hover, which means that .beacon's max opacity is whatever this is set to.
+                   Each overlay's individual opacity is set in their respective background color rgba(r,b,g, opacity).
+           -----------------------------------------------*/
+  cursor: pointer;
+  opacity: 1;
+  color: #ffffff;
+  font-size: 16pt;
+}
+
+.hover:hover .center {
+  opacity: 1;
+}
+
+.hover:hover .beacon {
+  animation: pulsing 1s linear infinite;
+}
+
+.hover:hover .text::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*-------------------------------------------------------------------------------------
+Map Section Divs:
+-sectionOut = The map image and dimensions of the section
+-sectionIn  = The colored overlay. 
+                -Hover options are controlled by the .hover class above.
+                -Since the child classes of .hover are the center and beacon classes, 
+                we have to use rgba to set the background opacity without
+                effecting the beacon opacity.
+---------------------------------------------------------------------------------------*/
+.map {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 1%;
+  padding-left: 10%;
+  padding-right: 10%;
+  flex: 1 1 80%;
+}
+
+.map table {
+  border: 2px solid salmon;
+}
+
+.map #morningsideOut {
+  background-image: url("./images/morningside_01.gif");
+  width: 327px;
+  height: 222px;
+}
+
+.map #morningsideOut #morningsideIn {
+  background: rgba(255, 0, 0, 0.5);
+  width: 327px;
+  height: 222px;
+}
+
+.map #morningsideOut #morningsideIn .text::before {
+  content: "Morningside";
+}
+
+.map #harlemOut {
+  background-image: url("./images/harlem_02.gif");
+  width: 584px;
+  height: 222px;
+}
+
+.map #harlemOut #harlemIn {
+  background: rgba(0, 128, 0, 0.5);
+  width: 584px;
+  height: 222px;
+}
+
+.map #harlemOut #harlemIn .text::before {
+  content: "Harlem";
+}
+
+.map #upperwestOut {
+  background-image: url("./images/upperwest_03.gif");
+  width: 327px;
+  height: 952px;
+}
+
+.map #upperwestOut #upperwestIn {
+  background: rgba(255, 165, 0, 0.5);
+  width: 327px;
+  height: 952px;
+}
+
+.map #upperwestOut #upperwestIn .text::before {
+  content: "Upper West";
+}
+
+.map #centralOut {
+  background-image: url("./images/central_04.gif");
+  width: 218px;
+  height: 952px;
+}
+
+.map #centralOut #centralIn {
+  background: rgba(199, 88, 106, 0.5);
+  width: 218px;
+  height: 952px;
+}
+
+.map #centralOut #centralIn .text::before {
+  content: "Cnt Park";
+}
+
+.map #uppereastOut {
+  background-image: url("./images/uppereast_05.gif");
+  width: 366px;
+  height: 952px;
+}
+
+.map #uppereastOut #uppereastIn {
+  background: rgba(255, 255, 0, 0.5);
+  width: 366px;
+  height: 952px;
+}
+
+.map #uppereastOut #uppereastIn .text::before {
+  content: "Upper East";
+}
+
+.map #hellsOut {
+  background-image: url("./images/hells_06.gif");
+  width: 327px;
+  height: 537px;
+}
+
+.map #hellsOut #hellsIn {
+  background: rgba(64, 224, 208, 0.5);
+  width: 327px;
+  height: 537px;
+}
+
+.map #hellsOut #hellsIn .text::before {
+  content: "Hells Kitchen";
+}
+
+.map #midtownOut {
+  background-image: url("./images/midtowntimesq_07.gif");
+  width: 218px;
+  height: 537px;
+}
+
+.map #midtownOut #midtownIn {
+  background: rgba(255, 99, 71, 0.5);
+  width: 218px;
+  height: 537px;
+}
+
+.map #midtownOut #midtownIn .text::before {
+  content: "Midtown";
+}
+
+.map #turtleOut {
+  background-image: url("./images/turtlebaymurrayhills_08.gif");
+  width: 366px;
+  height: 537px;
+}
+
+.map #turtleOut #turtleIn {
+  background: rgba(176, 224, 230, 0.5);
+  width: 366px;
+  height: 537px;
+}
+
+.map #turtleOut #turtleIn .text::before {
+  content: "Turtle Bay";
+}
+
+.map #sohoOut {
+  background-image: url("./images/chelseasoho_09.gif");
+  width: 545px;
+  height: 317px;
+}
+
+.map #sohoOut #sohoIn {
+  background: rgba(214, 214, 29, 0.5);
+  width: 545px;
+  height: 317px;
+}
+
+.map #sohoOut #sohoIn .text::before {
+  content: "Soho";
+}
+
+.map #lowereastOut {
+  background-image: url("./images/lowereast_10.gif");
+  width: 366px;
+  height: 317px;
+}
+
+.map #lowereastOut #lowereastIn {
+  background: rgba(255, 105, 180, 0.5);
+  width: 366px;
+  height: 317px;
+}
+
+.map #lowereastOut #lowereastIn .text::before {
+  content: "Lower East";
+}
+
+.map #waterOut {
+  background-image: url("./images/water_11.gif");
+  width: 231px;
+  height: 427px;
+}
+
+.map #waterOut #waterIn {
+  background: rgba(89, 89, 230, 0.5);
+  width: 231px;
+  height: 427px;
+}
+
+.map #waterOut #waterIn .text::before {
+  content: "";
+}
+
+.map #financialOut {
+  background-image: url("./images/financial_12.gif");
+  width: 680px;
+  height: 427px;
+}
+
+.map #financialOut #financialIn {
+  background: rgba(255, 217, 0, 0.5);
+  width: 680px;
+  height: 427px;
+}
+
+.map #financialOut #financialIn .text::before {
+  content: "Financial District";
+}
+
+/* Map Beacons---------------------------------------------------------------------------------------------------------------------
+    beaconCent: The container which serves as the center point. Position is set with this
+    beacon: options specific to each beacon are set with this i.e color.
+
+    Template:
+            -Park Beacon Center
+                -Park Beacon
+                    -Park Beacon::before (for the hover animation)
+-----------------------------------------------------------------------------------------------------------------------------------
+*/
+#parkBeaconCent {
+  transform: translate(100px, 0px);
+}
+
+#parkBeaconCent #parkBeacon {
+  background: #15ff00;
+}
+
+#parkBeaconCent #parkBeacon::before {
+  /*----------------------------------------------------------
+                PseudoElement ::before allows us to use a "clone" of the
+                        existing class to maneuver with :hover actions.
+            -----------------------------------------------------------*/
+  background: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  font-size: 24pt;
+  font-weight: 900;
+  text-align: center;
+  content: "Lasker Rink";
+  transition: all .5s ease-in-out;
+}
+
+#parkBeaconCent #parkBeacon:hover:before {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+  background-image: url("./images/lasker.jpeg");
+  background-size: cover;
+  border: 4px solid greenyellow;
+  transform: translate(-50%, -50%);
+}
+
+#westBeaconCent {
+  transform: translate(250px, 730px);
+}
+
+#westBeaconCent #westBeacon {
+  background: #15ff00;
+}
+
+#westBeaconCent #westBeacon::before {
+  /*----------------------------------------------------------
+                PseudoElement ::before allows us to use a "clone" of the
+                        existing class to maneuver with :hover actions.
+            -----------------------------------------------------------*/
+  background: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  font-size: 24pt;
+  font-weight: 900;
+  text-align: center;
+  content: "Lincoln Center for the Performing Arts";
+  transition: all .5s ease-in-out;
+}
+
+#westBeaconCent #westBeacon:hover:before {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+  background-image: url("./images/lincolncent.jpg");
+  background-size: cover;
+  border: 4px solid greenyellow;
+  transform: translate(-5%, -15%);
+}
+
+#westBeaconCent #westBeacon::before {
+  font-size: 12pt;
+}
+/*# sourceMappingURL=alternate.css.map */
